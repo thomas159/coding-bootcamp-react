@@ -33,7 +33,6 @@ export const media = Object.keys(minSizes, maxSizes).reduce((accumulator, label)
 
 const Container = styled.div`
   position: relative;
-  color: #333;
   background: inherit;
 
   ${media.phone`

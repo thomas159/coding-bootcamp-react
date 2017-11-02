@@ -13,8 +13,9 @@ const Grid = styled.ul`
 const Cell = styled.li`
   font-family: ${palette.title};
   flex: 0 0 100%;
-  padding: 10px;
-  font-size: 18px;
+  padding: 10px 10px 40px 10px;
+  font-weight: 700;
+  font-size: 16px;
   ${media.desktop`
     flex: 0 0 33.33%;
   `}
@@ -24,8 +25,9 @@ const Cell = styled.li`
 `
 
 const Title = styled.div`
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   background: #fff;
+  text-align: center;
 `
 
 const Compare = () => (
@@ -34,7 +36,7 @@ const Compare = () => (
       {compareData.map(item =>
         <Cell>
           <Img src={item.img} />
-          <Title>Compare {item.cat}</Title>
+          <Title>Compare {item.cat} &rarr;</Title>
         </Cell>,
       )}
     </Grid>
