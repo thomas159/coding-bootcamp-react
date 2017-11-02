@@ -1,19 +1,34 @@
 import React, { Component } from 'react'
-import logo from './logo.svg'
+import 'sanitize.css'
+import styled from 'styled-components'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import ScrollToTop from './components/atoms/ScrollToTop'
 import './App.css'
+import Header from './components/Header'
+import Home from './components/Home'
+import Footer from './components/Footer'
+
+const Wrapper = styled.div`
+display:flex;
+min-height:100vh;
+flex:1;
+background:#eee;
+`
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <ScrollToTop>
+          <Header />
+          <Wrapper>
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </Wrapper>
+          <Footer />
+        </ScrollToTop>
+      </Router>
     )
   }
 }
