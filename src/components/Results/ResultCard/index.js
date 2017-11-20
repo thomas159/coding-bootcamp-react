@@ -26,7 +26,6 @@ const Grid = styled.div`
 const Cell = styled.div`
   flex: 0 0 33.3333%;
   text-align: center;
-  color: #fff;
 `
 
 const Months = styled.div`
@@ -47,32 +46,71 @@ const Site = styled.div`
   text-align: center;
 `
 
-const ResultCard = ({ img, link, priceOneMonth, priceSixMonths, priceYear }) => (
-  <Wrap>
-    <Img src={img} />
-    <Membership>Membership Fees</Membership>
-    <Grid>
-      <Cell>
-        <Months>1 Month</Months>
-        <Price>{`${priceOneMonth} czk`}</Price>
-      </Cell>
-      <Cell>
-        <Months>6 Months</Months>
-        <Price>{`${priceSixMonths} czk`}</Price>
-      </Cell>
-      <Cell>
-        <Months>12 Months</Months>
-        <Price>{`${priceYear} czk`}</Price>
-      </Cell>
-    </Grid>
-    <Site><A href={link} target="_blank">Visit site &raquo;</A></Site>
-  </Wrap>
+// Moving
+
+const MovingWrap = styled.section`
+width: 100%;
+height: auto;
+background: #fff;
+color: #000
+`
+
+const ResultCard = ({ filter, img, link, priceOneMonth, priceSixMonths, priceYear }) => (
+  <div>
+    {
+      filter === 'gyms' &&
+      <Wrap>
+        <Img src={img} />
+        <Membership>Membership Fees</Membership>
+        <Grid>
+          <Cell>
+            <Months>1 Month</Months>
+            <Price>{`${priceOneMonth} czk`}</Price>
+          </Cell>
+          <Cell>
+            <Months>6 Months</Months>
+            <Price>{`${priceSixMonths} czk`}</Price>
+          </Cell>
+          <Cell>
+            <Months>12 Months</Months>
+            <Price>{`${priceYear} czk`}</Price>
+          </Cell>
+        </Grid>
+        <Site><A href={link} target="_blank">Visit site &raquo;</A></Site>
+      </Wrap>
+    }
+    {
+      filter === 'moving-companies' &&
+      <MovingWrap>
+        <Img src={img} />
+        <Grid>
+          <Cell>
+            <div />
+            <div>Van with driver and 2 movers</div>
+            <div>Van with driver and 1 movers</div>
+          </Cell>
+          <Cell>
+            <div>price per hour</div>
+            <div>900</div>
+            <div>600</div>
+          </Cell>
+          <Cell>
+            <div>Minimum Charge</div>
+            <div>900</div>
+            <div>600</div>
+          </Cell>
+        </Grid>
+        <Site><A href={link} target="_blank">Visit site &raquo;</A></Site>
+      </MovingWrap>
+    }
+  </div>
 )
 
 export default ResultCard
 
 
 ResultCard.defaultProps = {
+  filter: '',
   img: '',
   link: '',
   priceOneMonth: '',
@@ -81,6 +119,7 @@ ResultCard.defaultProps = {
 }
 
 ResultCard.propTypes = {
+  filter: string,
   img: string,
   link: '',
   priceOneMonth: number,

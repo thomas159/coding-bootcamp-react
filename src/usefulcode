@@ -1,0 +1,20 @@
+  {/* <FormWrap>
+      Search for delivery companies
+      <Input
+        label="To"
+        placeholder="start from"
+      />
+      <Input
+        label="From"
+        placeholder="destination"
+      />
+    </FormWrap> */}
+
+    const FormWrap = styled.div`
+  max-width: 1260px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 100px 20px;
+  background: rgba(255,255,255,0.7);
+  border-radius: ${palette.borderRadius}
+`

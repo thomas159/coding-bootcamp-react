@@ -1,16 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import Container, { media } from '../../atoms/Container'
 import { compareData } from '../../data'
 import Img from '../../atoms/Img'
 import * as palette from '../../atoms/variables'
+
 
 const Grid = styled.ul`
   display: flex;
   flex-wrap: wrap;
 `
 
-const Cell = styled.li`
+const Cell = styled(Link)`
   font-family: ${palette.title};
   flex: 0 0 100%;
   padding: 10px 10px 40px 10px;
@@ -31,10 +33,10 @@ const Title = styled.div`
 `
 
 const Compare = () => (
-  <Container>
+  <Container padding40>
     <Grid>
       {compareData.map(item =>
-        <Cell>
+        <Cell to={`compare/${item.slug}`}>
           <Img src={item.img} />
           <Title>Compare {item.cat} &rarr;</Title>
         </Cell>,

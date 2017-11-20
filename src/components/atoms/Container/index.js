@@ -40,28 +40,28 @@ const Container = styled.div`
     max-width: 1260px;
     margin: 0 auto;
     padding: 0 ;
-    ${props => props.padding && 'padding: 0 10px'}
+    ${props => props.padding40 && 'padding: 0 40px'}
   `}
   ${media.tablet`
     position: relative;
     max-width: 1260px;
     margin: 0 auto;
     padding: 0;
-    ${props => props.padding && 'padding: 0 10px'}
+    ${props => props.padding40 && 'padding: 0 40px'}
   `}
   ${media.desktop`
     position: relative;
     max-width: 1260px;
     margin: 0 auto;
     padding: 0;
-    ${props => props.padding40 && 'padding: 40px'}
+    ${props => props.padding40 && 'padding: 40px 0'}
   `}
   ${media.giant`
     position: relative;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 ;
-    ${props => props.padding40 && 'padding: 40px'}
+    ${props => props.padding40 && 'padding: 40px 0'}
   `}
 `
 

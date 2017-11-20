@@ -3,6 +3,8 @@ import { injectGlobal } from 'styled-components'
 
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Saira|Saira+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Saira|Saira+Semi+Condensed');
 * {
     box-sizing: border-box;
 }

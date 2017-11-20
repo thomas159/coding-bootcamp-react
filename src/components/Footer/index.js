@@ -16,13 +16,13 @@ const Cell = styled.div`
 `
 
 const Top = styled.div`
-  background: #353535;
+  background: #dfdfdf;
   padding: 10px;
   color: #fff;
 `
 
 const Bottom = styled.div`
-  background: #282828;
+  background: #d6d6d6;
 `
 
 const Cat = styled.div`
